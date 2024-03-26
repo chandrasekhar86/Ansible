@@ -1,0 +1,12 @@
+- name: Install Packages
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Intsall Nginx
+      ansible.builtin.yum:
+        name: Nginx
+        state: installed
+    - name: Start Service
+      ansible.builtin.services:
+        name: Nginx
+        state: restarted
