@@ -10,3 +10,6 @@
       ansible.builtin.services:
         name: Nginx
         state: restarted
+    - name: remove default content
+      ansible.builtin.shell:
+        name: rm -rf /usr/share/nginx/html/*
