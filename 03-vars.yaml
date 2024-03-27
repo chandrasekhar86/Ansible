@@ -1,0 +1,11 @@
+- name: variables at playbook
+  hosts: localhost
+  become: yes
+  vars:
+    course: DevOps
+    trainer: Chandra
+    duration: 3 months
+  tasks:
+    - name: print variables at playbook level
+      ansible.builtin.debug:
+        msg: "i am learning {{course:}} and my tariner is {{tariner}} and duration is {{duration}}"
